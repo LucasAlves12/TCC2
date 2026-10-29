@@ -1,0 +1,41 @@
+{
+  "executado_em": "2026-10-27T15:47:03",
+  "semente": 42,
+  "splits_internos": 3,
+  "otimizador": {
+    "biblioteca": "optuna",
+    "sampler": "TPESampler(multivariate=True)",
+    "pruner": "MedianPruner(n_startup_trials=5, n_warmup_steps=1)",
+    "objetivo": "AUC média do TimeSeriesSplit interno",
+    "n_trials": {
+      "arvore_decisao": 30,
+      "svm": 25,
+      "random_forest": 20,
+      "xgboost": 25,
+      "lightgbm": 25
+    }
+  },
+  "modelos": [
+    "arvore_decisao",
+    "svm",
+    "random_forest",
+    "xgboost",
+    "lightgbm"
+  ],
+  "baseline": "moda: DummyClassifier(strategy='most_frequent') por divisão",
+  "n_features": 77,
+  "algoritmo_para_shap": "random_forest",
+  "criterio_escolha_algoritmo": "maior AUC da validação interna entre os modelos explicáveis pelo TreeExplainer",
+  "params_finais": {
+    "origem": "valor central das 18 buscas do Walk-Forward",
+    "iguais_nas_duas_eras": true,
+    "valores": {
+      "mod__max_features": "sqrt",
+      "mod__min_samples_leaf": "54"
+    }
+  },
+  "modelos_finais": {
+    "Classica": "modelos\\Classica_random_forest.joblib",
+    "Moderna": "modelos\\Moderna_random_forest.joblib"
+  }
+}

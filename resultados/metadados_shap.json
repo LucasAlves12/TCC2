@@ -1,0 +1,34 @@
+{
+  "algoritmo": "random_forest",
+  "eras": {
+    "Classica": 10479,
+    "Moderna": 10731
+  },
+  "n_features": 77,
+  "n_familias": 28,
+  "aditividade_erro_maximo": {
+    "Classica": 2.220446049250313e-15,
+    "Moderna": 2.220446049250313e-15
+  },
+  "spearman_entre_eras": {
+    "rho": 0.9381499726327313,
+    "p": 1.7352874199869534e-13
+  },
+  "bootstrap_temporadas": {
+    "n": 500,
+    "familias_com_ic_sem_zero": 26
+  },
+  "sementes": [
+    42,
+    7,
+    2024
+  ],
+  "peso_perimetro": {
+    "Classica": 0.09302920315775565,
+    "Moderna": 0.10907210640574173
+  },
+  "bootstrap_trajetoria": {
+    "n": 1000,
+    "largura_media_ic_ponto": 0.06615698833034016
+  }
+}
